@@ -1,760 +1,759 @@
+
 <!DOCTYPE html>
 <html>
+
 <head>
-    
+
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-            <meta name="viewport" content="width=device-width,
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" />
+
+    <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_db5094cd6d47b07bb4606d4f9dade2cc {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
+    <style>
+        #map_db5094cd6d47b07bb4606d4f9dade2cc {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
 
-            <style>html, body {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            </style>
+        .leaflet-container {
+            font-size: 1rem;
+        }
+    </style>
 
-            <style>#map {
-                position:absolute;
-                top:0;
-                bottom:0;
-                right:0;
-                left:0;
-                }
-            </style>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 
-            <script>
-                L_NO_TOUCH = false;
-                L_DISABLE_3D = false;
-            </script>
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
 
-        
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+
+
 </head>
+
 <body>
-    
-    
-            <div class="folium-map" id="map_db5094cd6d47b07bb4606d4f9dade2cc" ></div>
-        
+
+
+    <div class="folium-map" id="map_db5094cd6d47b07bb4606d4f9dade2cc"></div>
+
 </body>
 <script>
-    
-    
-            var map_db5094cd6d47b07bb4606d4f9dade2cc = L.map(
-                "map_db5094cd6d47b07bb4606d4f9dade2cc",
-                {
-                    center: [43.25, 27.96],
-                    crs: L.CRS.EPSG3857,
-                    ...{
-  "zoom": 12,
-  "zoomControl": true,
-  "preferCanvas": false,
-}
 
-                }
-            );
 
-            
+    var map_db5094cd6d47b07bb4606d4f9dade2cc = L.map(
+        "map_db5094cd6d47b07bb4606d4f9dade2cc",
+        {
+            center: [43.25, 27.96],
+            crs: L.CRS.EPSG3857,
+            ...{
+                "zoom": 12,
+                "zoomControl": true,
+                "preferCanvas": false,
+            }
 
-        
-    
-            var tile_layer_8f73afed90481129645ce9c0a3b062f2 = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {
-  "minZoom": 0,
-  "maxZoom": 19,
-  "maxNativeZoom": 19,
-  "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
-  "subdomains": "abc",
-  "detectRetina": false,
-  "tms": false,
-  "opacity": 1,
-}
+        }
+    );
 
-            );
-        
-    
-            tile_layer_8f73afed90481129645ce9c0a3b062f2.addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var marker_2d4947b87b6c65e7e06849734f5f584c = L.marker(
-                [43.2878, 28.0433],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_49139e6117ceda2ecdf9d469a041275b = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "purple",
-  "iconColor": "white",
-  "icon": "hotel",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_3a3c6386275f8937e43bd8ca4fe091d5 = L.popup({
-  "maxWidth": "100%",
-});
+    var tile_layer_8f73afed90481129645ce9c0a3b062f2 = L.tileLayer(
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+            "minZoom": 0,
+            "maxZoom": 19,
+            "maxNativeZoom": 19,
+            "noWrap": false,
+            "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+            "subdomains": "abc",
+            "detectRetina": false,
+            "tms": false,
+            "opacity": 1,
+        }
 
-        
-            
-                var html_598217ff763ffcda3513510c57a429c4 = $(`<div id="html_598217ff763ffcda3513510c57a429c4" style="width: 100.0%; height: 100.0%;"><b>Apart Hotel Golden Line</b><br>Стартовая точка на Золотых Песках</div>`)[0];
-                popup_3a3c6386275f8937e43bd8ca4fe091d5.setContent(html_598217ff763ffcda3513510c57a429c4);
-            
-        
+    );
 
-        marker_2d4947b87b6c65e7e06849734f5f584c.bindPopup(popup_3a3c6386275f8937e43bd8ca4fe091d5)
-        ;
 
-        
-    
-    
-            marker_2d4947b87b6c65e7e06849734f5f584c.bindTooltip(
-                `<div>
+    tile_layer_8f73afed90481129645ce9c0a3b062f2.addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+    var marker_2d4947b87b6c65e7e06849734f5f584c = L.marker(
+        [43.2878, 28.0433],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_49139e6117ceda2ecdf9d469a041275b = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "purple",
+            "iconColor": "white",
+            "icon": "hotel",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_3a3c6386275f8937e43bd8ca4fe091d5 = L.popup({
+        "maxWidth": "100%",
+    });
+
+    var html_598217ff763ffcda3513510c57a429c4 = $(`<div id="html_598217ff763ffcda3513510c57a429c4" style="width: 100.0%; height: 100.0%;"><b>Apart Hotel Golden Line</b><br>Стартовая точка на Золотых Песках</div>`)[0];
+    popup_3a3c6386275f8937e43bd8ca4fe091d5.setContent(html_598217ff763ffcda3513510c57a429c4);
+
+    marker_2d4947b87b6c65e7e06849734f5f584c.bindPopup(popup_3a3c6386275f8937e43bd8ca4fe091d5);
+    marker_2d4947b87b6c65e7e06849734f5f584c.bindTooltip(
+        `<div>
                      Отель Golden Line 🏨
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_2d4947b87b6c65e7e06849734f5f584c.setIcon(icon_49139e6117ceda2ecdf9d469a041275b);
-            
-    
-            var poly_line_a767717e4a0c429aa111fbaa67efded0 = L.polyline(
-                [[43.2902, 28.0395], [43.2842, 28.0378], [43.275, 28.0268], [43.2588, 28.0062], [43.2415, 27.9812], [43.2281, 27.9548], [43.2201, 27.9492], [43.2125, 27.9365], [43.2052, 27.9184], [43.2046, 27.9105], [43.216, 27.899], [43.2215, 27.8824], [43.2322, 27.8252]],
-                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            poly_line_a767717e4a0c429aa111fbaa67efded0.bindTooltip(
-                `<div>
+        {
+            "sticky": true,
+        }
+    );
+
+
+    marker_2d4947b87b6c65e7e06849734f5f584c.setIcon(icon_49139e6117ceda2ecdf9d469a041275b);
+
+
+    var poly_line_a767717e4a0c429aa111fbaa67efded0 = L.polyline(
+        [[43.2902, 28.0395], [43.2842, 28.0378], [43.275, 28.0268], [43.2588, 28.0062], [43.2415, 27.9812], [43.2281, 27.9548], [43.2201, 27.9492], [43.2125, 27.9365], [43.2052, 27.9184], [43.2046, 27.9105], [43.216, 27.899], [43.2215, 27.8824], [43.2322, 27.8252]],
+        { "bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2ecc71", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 5 }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    poly_line_a767717e4a0c429aa111fbaa67efded0.bindTooltip(
+        `<div>
                      Маршрут автобуса №409
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var circle_marker_ce9bf64dc7a9a68fb18578ea46c5117f = L.circleMarker(
-                [43.2902, 28.0395],
-                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-        var popup_a826c30c9ed02f2f208ffdf91fd445ba = L.popup({
-  "maxWidth": "100%",
-});
+        {
+            "sticky": true,
+        }
+    );
 
-        
-            
-                var html_4edd9b677f04248ed67dd1a32699b6b5 = $(`<div id="html_4edd9b677f04248ed67dd1a32699b6b5" style="width: 100.0%; height: 100.0%;"><b>сп. Република</b><br>Конечная Золотых Песков</div>`)[0];
-                popup_a826c30c9ed02f2f208ffdf91fd445ba.setContent(html_4edd9b677f04248ed67dd1a32699b6b5);
-            
-        
 
-        circle_marker_ce9bf64dc7a9a68fb18578ea46c5117f.bindPopup(popup_a826c30c9ed02f2f208ffdf91fd445ba)
+    var circle_marker_ce9bf64dc7a9a68fb18578ea46c5117f = L.circleMarker(
+        [43.2902, 28.0395],
+        { "bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3 }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var popup_a826c30c9ed02f2f208ffdf91fd445ba = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_4edd9b677f04248ed67dd1a32699b6b5 = $(`<div id="html_4edd9b677f04248ed67dd1a32699b6b5" style="width: 100.0%; height: 100.0%;"><b>сп. Република</b><br>Конечная Золотых Песков</div>`)[0];
+    popup_a826c30c9ed02f2f208ffdf91fd445ba.setContent(html_4edd9b677f04248ed67dd1a32699b6b5);
+
+
+
+    circle_marker_ce9bf64dc7a9a68fb18578ea46c5117f.bindPopup(popup_a826c30c9ed02f2f208ffdf91fd445ba)
         ;
 
-        
-    
-    
-            var circle_marker_1f42b0aa97471e3dabafaf4cd20405ce = L.circleMarker(
-                [43.2842, 28.0378],
-                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-        var popup_e3addbf3c1c45ac682b19da6d75228b4 = L.popup({
-  "maxWidth": "100%",
-});
 
-        
-            
-                var html_1781e035f208850b9b8744e85b924ecc = $(`<div id="html_1781e035f208850b9b8744e85b924ecc" style="width: 100.0%; height: 100.0%;"><b>сп. Мадара</b><br>7 минут пешком от отеля Golden Line</div>`)[0];
-                popup_e3addbf3c1c45ac682b19da6d75228b4.setContent(html_1781e035f208850b9b8744e85b924ecc);
-            
-        
 
-        circle_marker_1f42b0aa97471e3dabafaf4cd20405ce.bindPopup(popup_e3addbf3c1c45ac682b19da6d75228b4)
+
+    var circle_marker_1f42b0aa97471e3dabafaf4cd20405ce = L.circleMarker(
+        [43.2842, 28.0378],
+        { "bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3 }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var popup_e3addbf3c1c45ac682b19da6d75228b4 = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_1781e035f208850b9b8744e85b924ecc = $(`<div id="html_1781e035f208850b9b8744e85b924ecc" style="width: 100.0%; height: 100.0%;"><b>сп. Мадара</b><br>7 минут пешком от отеля Golden Line</div>`)[0];
+    popup_e3addbf3c1c45ac682b19da6d75228b4.setContent(html_1781e035f208850b9b8744e85b924ecc);
+
+
+
+    circle_marker_1f42b0aa97471e3dabafaf4cd20405ce.bindPopup(popup_e3addbf3c1c45ac682b19da6d75228b4)
         ;
 
-        
-    
-    
-            var circle_marker_dac4b21d1b50126b0b137b56a32b4e09 = L.circleMarker(
-                [43.2046, 27.9105],
-                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-        var popup_5f431a85b1815a8e9d8c2192ef1c56e3 = L.popup({
-  "maxWidth": "100%",
-});
 
-        
-            
-                var html_e1c43a23cf6789affd84b0ba49d3cff8 = $(`<div id="html_e1c43a23cf6789affd84b0ba49d3cff8" style="width: 100.0%; height: 100.0%;"><b>сп. Катедралата</b><br>Центр города / У Кафедрального Собора</div>`)[0];
-                popup_5f431a85b1815a8e9d8c2192ef1c56e3.setContent(html_e1c43a23cf6789affd84b0ba49d3cff8);
-            
-        
 
-        circle_marker_dac4b21d1b50126b0b137b56a32b4e09.bindPopup(popup_5f431a85b1815a8e9d8c2192ef1c56e3)
+
+    var circle_marker_dac4b21d1b50126b0b137b56a32b4e09 = L.circleMarker(
+        [43.2046, 27.9105],
+        { "bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3 }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var popup_5f431a85b1815a8e9d8c2192ef1c56e3 = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_e1c43a23cf6789affd84b0ba49d3cff8 = $(`<div id="html_e1c43a23cf6789affd84b0ba49d3cff8" style="width: 100.0%; height: 100.0%;"><b>сп. Катедралата</b><br>Центр города / У Кафедрального Собора</div>`)[0];
+    popup_5f431a85b1815a8e9d8c2192ef1c56e3.setContent(html_e1c43a23cf6789affd84b0ba49d3cff8);
+
+
+
+    circle_marker_dac4b21d1b50126b0b137b56a32b4e09.bindPopup(popup_5f431a85b1815a8e9d8c2192ef1c56e3)
         ;
 
-        
-    
-    
-            var circle_marker_6d32a670034d32d85830288f43c545ee = L.circleMarker(
-                [43.216, 27.899],
-                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-        var popup_ab0aca1d34e7c855d9eeb95f12a41f7d = L.popup({
-  "maxWidth": "100%",
-});
 
-        
-            
-                var html_e12f625febf58d323861fd82120fd024 = $(`<div id="html_e12f625febf58d323861fd82120fd024" style="width: 100.0%; height: 100.0%;"><b>сп. Автогара</b><br>Автовокзал / Выход к Grand Mall</div>`)[0];
-                popup_ab0aca1d34e7c855d9eeb95f12a41f7d.setContent(html_e12f625febf58d323861fd82120fd024);
-            
-        
 
-        circle_marker_6d32a670034d32d85830288f43c545ee.bindPopup(popup_ab0aca1d34e7c855d9eeb95f12a41f7d)
+
+    var circle_marker_6d32a670034d32d85830288f43c545ee = L.circleMarker(
+        [43.216, 27.899],
+        { "bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3 }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var popup_ab0aca1d34e7c855d9eeb95f12a41f7d = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_e12f625febf58d323861fd82120fd024 = $(`<div id="html_e12f625febf58d323861fd82120fd024" style="width: 100.0%; height: 100.0%;"><b>сп. Автогара</b><br>Автовокзал / Выход к Grand Mall</div>`)[0];
+    popup_ab0aca1d34e7c855d9eeb95f12a41f7d.setContent(html_e12f625febf58d323861fd82120fd024);
+
+
+
+    circle_marker_6d32a670034d32d85830288f43c545ee.bindPopup(popup_ab0aca1d34e7c855d9eeb95f12a41f7d)
         ;
 
-        
-    
-    
-            var circle_marker_c7d9ca82a3bcd5a5b3142b87aa5d03e2 = L.circleMarker(
-                [43.2322, 27.8252],
-                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-        var popup_85226062bc9519478b2569aeffd5cc46 = L.popup({
-  "maxWidth": "100%",
-});
 
-        
-            
-                var html_a757552cf7f51f9a4984739cfaa63e91 = $(`<div id="html_a757552cf7f51f9a4984739cfaa63e91" style="width: 100.0%; height: 100.0%;"><b>Летище Варна</b><br>Аэропорт Варны (Конечная)</div>`)[0];
-                popup_85226062bc9519478b2569aeffd5cc46.setContent(html_a757552cf7f51f9a4984739cfaa63e91);
-            
-        
 
-        circle_marker_c7d9ca82a3bcd5a5b3142b87aa5d03e2.bindPopup(popup_85226062bc9519478b2569aeffd5cc46)
+
+    var circle_marker_c7d9ca82a3bcd5a5b3142b87aa5d03e2 = L.circleMarker(
+        [43.2322, 27.8252],
+        { "bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3 }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var popup_85226062bc9519478b2569aeffd5cc46 = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_a757552cf7f51f9a4984739cfaa63e91 = $(`<div id="html_a757552cf7f51f9a4984739cfaa63e91" style="width: 100.0%; height: 100.0%;"><b>Летище Варна</b><br>Аэропорт Варны (Конечная)</div>`)[0];
+    popup_85226062bc9519478b2569aeffd5cc46.setContent(html_a757552cf7f51f9a4984739cfaa63e91);
+
+
+
+    circle_marker_c7d9ca82a3bcd5a5b3142b87aa5d03e2.bindPopup(popup_85226062bc9519478b2569aeffd5cc46)
         ;
 
-        
-    
-    
-            var marker_f5de376c3d2284586ea8d46405fd8e2d = L.marker(
-                [43.2425, 27.8643],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_9e4aa8d4370fb83104095ea19ce291c7 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "blue",
-  "iconColor": "white",
-  "icon": "shopping-cart",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_138d00ff9a0ac9bb205515541c10aea6 = L.popup({
-  "maxWidth": "100%",
-});
 
-        
-            
-                var html_6bb6ccdf18c82febc07fdfbbbbd37311 = $(`<div id="html_6bb6ccdf18c82febc07fdfbbbbd37311" style="width: 100.0%; height: 100.0%;"><b>Lidl Владиславово</b><br>бул. Света Елена 14</div>`)[0];
-                popup_138d00ff9a0ac9bb205515541c10aea6.setContent(html_6bb6ccdf18c82febc07fdfbbbbd37311);
-            
-        
 
-        marker_f5de376c3d2284586ea8d46405fd8e2d.bindPopup(popup_138d00ff9a0ac9bb205515541c10aea6)
+
+    var marker_f5de376c3d2284586ea8d46405fd8e2d = L.marker(
+        [43.2425, 27.8643],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_9e4aa8d4370fb83104095ea19ce291c7 = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "blue",
+            "iconColor": "white",
+            "icon": "shopping-cart",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_138d00ff9a0ac9bb205515541c10aea6 = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_6bb6ccdf18c82febc07fdfbbbbd37311 = $(`<div id="html_6bb6ccdf18c82febc07fdfbbbbd37311" style="width: 100.0%; height: 100.0%;"><b>Lidl Владиславово</b><br>бул. Света Елена 14</div>`)[0];
+    popup_138d00ff9a0ac9bb205515541c10aea6.setContent(html_6bb6ccdf18c82febc07fdfbbbbd37311);
+
+
+
+    marker_f5de376c3d2284586ea8d46405fd8e2d.bindPopup(popup_138d00ff9a0ac9bb205515541c10aea6)
         ;
 
-        
-    
-    
-            marker_f5de376c3d2284586ea8d46405fd8e2d.bindTooltip(
-                `<div>
+
+
+
+    marker_f5de376c3d2284586ea8d46405fd8e2d.bindTooltip(
+        `<div>
                      Lidl Владиславово
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_f5de376c3d2284586ea8d46405fd8e2d.setIcon(icon_9e4aa8d4370fb83104095ea19ce291c7);
-            
-    
-            var marker_08b4b2e5fdeca14efbcb4c1200c9b914 = L.marker(
-                [43.2215, 27.8824],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_ee263ac788db2d5d38de5a9e10e60f54 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "blue",
-  "iconColor": "white",
-  "icon": "shopping-cart",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_b2f4851b85bf4b65b735833f638d8c43 = L.popup({
-  "maxWidth": "100%",
-});
+        {
+            "sticky": true,
+        }
+    );
 
-        
-            
-                var html_ac81ee825f4438696980ac9c16fae8d8 = $(`<div id="html_ac81ee825f4438696980ac9c16fae8d8" style="width: 100.0%; height: 100.0%;"><b>Lidl Младост</b><br>бул. Република 62 (у маршрута 409)</div>`)[0];
-                popup_b2f4851b85bf4b65b735833f638d8c43.setContent(html_ac81ee825f4438696980ac9c16fae8d8);
-            
-        
 
-        marker_08b4b2e5fdeca14efbcb4c1200c9b914.bindPopup(popup_b2f4851b85bf4b65b735833f638d8c43)
+    marker_f5de376c3d2284586ea8d46405fd8e2d.setIcon(icon_9e4aa8d4370fb83104095ea19ce291c7);
+
+
+    var marker_08b4b2e5fdeca14efbcb4c1200c9b914 = L.marker(
+        [43.2215, 27.8824],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_ee263ac788db2d5d38de5a9e10e60f54 = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "blue",
+            "iconColor": "white",
+            "icon": "shopping-cart",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_b2f4851b85bf4b65b735833f638d8c43 = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_ac81ee825f4438696980ac9c16fae8d8 = $(`<div id="html_ac81ee825f4438696980ac9c16fae8d8" style="width: 100.0%; height: 100.0%;"><b>Lidl Младост</b><br>бул. Република 62 (у маршрута 409)</div>`)[0];
+    popup_b2f4851b85bf4b65b735833f638d8c43.setContent(html_ac81ee825f4438696980ac9c16fae8d8);
+
+
+
+    marker_08b4b2e5fdeca14efbcb4c1200c9b914.bindPopup(popup_b2f4851b85bf4b65b735833f638d8c43)
         ;
 
-        
-    
-    
-            marker_08b4b2e5fdeca14efbcb4c1200c9b914.bindTooltip(
-                `<div>
+
+
+
+    marker_08b4b2e5fdeca14efbcb4c1200c9b914.bindTooltip(
+        `<div>
                      Lidl Младост
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_08b4b2e5fdeca14efbcb4c1200c9b914.setIcon(icon_ee263ac788db2d5d38de5a9e10e60f54);
-            
-    
-            var marker_f5011fdd012b4fef829d8c1090a9118b = L.marker(
-                [43.2128, 27.9155],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_9a9c3a8537a211097e076845edc1c6ef = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "blue",
-  "iconColor": "white",
-  "icon": "shopping-cart",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_91b8da1a5f3830e3aecf070da897ea46 = L.popup({
-  "maxWidth": "100%",
-});
+        {
+            "sticky": true,
+        }
+    );
 
-        
-            
-                var html_cb7e547cf87d3ce3ac21af53d7fc5dc4 = $(`<div id="html_cb7e547cf87d3ce3ac21af53d7fc5dc4" style="width: 100.0%; height: 100.0%;"><b>Lidl Центр</b><br>ул. Битоля 1А</div>`)[0];
-                popup_91b8da1a5f3830e3aecf070da897ea46.setContent(html_cb7e547cf87d3ce3ac21af53d7fc5dc4);
-            
-        
 
-        marker_f5011fdd012b4fef829d8c1090a9118b.bindPopup(popup_91b8da1a5f3830e3aecf070da897ea46)
+    marker_08b4b2e5fdeca14efbcb4c1200c9b914.setIcon(icon_ee263ac788db2d5d38de5a9e10e60f54);
+
+
+    var marker_f5011fdd012b4fef829d8c1090a9118b = L.marker(
+        [43.2128, 27.9155],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_9a9c3a8537a211097e076845edc1c6ef = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "blue",
+            "iconColor": "white",
+            "icon": "shopping-cart",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_91b8da1a5f3830e3aecf070da897ea46 = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_cb7e547cf87d3ce3ac21af53d7fc5dc4 = $(`<div id="html_cb7e547cf87d3ce3ac21af53d7fc5dc4" style="width: 100.0%; height: 100.0%;"><b>Lidl Центр</b><br>ул. Битоля 1А</div>`)[0];
+    popup_91b8da1a5f3830e3aecf070da897ea46.setContent(html_cb7e547cf87d3ce3ac21af53d7fc5dc4);
+
+
+
+    marker_f5011fdd012b4fef829d8c1090a9118b.bindPopup(popup_91b8da1a5f3830e3aecf070da897ea46)
         ;
 
-        
-    
-    
-            marker_f5011fdd012b4fef829d8c1090a9118b.bindTooltip(
-                `<div>
+
+
+
+    marker_f5011fdd012b4fef829d8c1090a9118b.bindTooltip(
+        `<div>
                      Lidl Центр
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_f5011fdd012b4fef829d8c1090a9118b.setIcon(icon_9a9c3a8537a211097e076845edc1c6ef);
-            
-    
-            var marker_32e305081ca4a06b813357bf61bcc7a0 = L.marker(
-                [43.2201, 27.9492],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_e347547a16a278ad2acd9003d061f00b = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "blue",
-  "iconColor": "white",
-  "icon": "shopping-cart",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_3c171d78a3987253958a7545a4f7d96b = L.popup({
-  "maxWidth": "100%",
-});
+        {
+            "sticky": true,
+        }
+    );
 
-        
-            
-                var html_755935293398da58abdb996eabe070b8 = $(`<div id="html_755935293398da58abdb996eabe070b8" style="width: 100.0%; height: 100.0%;"><b>Lidl Бриз</b><br>ул. 68-ма, д. 6 (у маршрута 409)</div>`)[0];
-                popup_3c171d78a3987253958a7545a4f7d96b.setContent(html_755935293398da58abdb996eabe070b8);
-            
-        
 
-        marker_32e305081ca4a06b813357bf61bcc7a0.bindPopup(popup_3c171d78a3987253958a7545a4f7d96b)
+    marker_f5011fdd012b4fef829d8c1090a9118b.setIcon(icon_9a9c3a8537a211097e076845edc1c6ef);
+
+
+    var marker_32e305081ca4a06b813357bf61bcc7a0 = L.marker(
+        [43.2201, 27.9492],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_e347547a16a278ad2acd9003d061f00b = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "blue",
+            "iconColor": "white",
+            "icon": "shopping-cart",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_3c171d78a3987253958a7545a4f7d96b = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_755935293398da58abdb996eabe070b8 = $(`<div id="html_755935293398da58abdb996eabe070b8" style="width: 100.0%; height: 100.0%;"><b>Lidl Бриз</b><br>ул. 68-ма, д. 6 (у маршрута 409)</div>`)[0];
+    popup_3c171d78a3987253958a7545a4f7d96b.setContent(html_755935293398da58abdb996eabe070b8);
+
+
+
+    marker_32e305081ca4a06b813357bf61bcc7a0.bindPopup(popup_3c171d78a3987253958a7545a4f7d96b)
         ;
 
-        
-    
-    
-            marker_32e305081ca4a06b813357bf61bcc7a0.bindTooltip(
-                `<div>
+
+
+
+    marker_32e305081ca4a06b813357bf61bcc7a0.bindTooltip(
+        `<div>
                      Lidl Бриз
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_32e305081ca4a06b813357bf61bcc7a0.setIcon(icon_e347547a16a278ad2acd9003d061f00b);
-            
-    
-            var marker_a299dd17c58d9db31e269cfc5e48c8e1 = L.marker(
-                [43.2185, 27.8985],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_fe8906b39ff395b970c8c87d3fc0663c = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "orange",
-  "iconColor": "white",
-  "icon": "tags",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_a6a3cc365fa548a07c5cb47c82e8ad88 = L.popup({
-  "maxWidth": "100%",
-});
+        {
+            "sticky": true,
+        }
+    );
 
-        
-            
-                var html_a5bee649cff6ded83c49251cbc9795ae = $(`<div id="html_a5bee649cff6ded83c49251cbc9795ae" style="width: 100.0%; height: 100.0%;"><b>Pepco Grand Mall</b><br>бул. Сахаров 2 (Рядом со сп. Автогара)</div>`)[0];
-                popup_a6a3cc365fa548a07c5cb47c82e8ad88.setContent(html_a5bee649cff6ded83c49251cbc9795ae);
-            
-        
 
-        marker_a299dd17c58d9db31e269cfc5e48c8e1.bindPopup(popup_a6a3cc365fa548a07c5cb47c82e8ad88)
+    marker_32e305081ca4a06b813357bf61bcc7a0.setIcon(icon_e347547a16a278ad2acd9003d061f00b);
+
+
+    var marker_a299dd17c58d9db31e269cfc5e48c8e1 = L.marker(
+        [43.2185, 27.8985],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_fe8906b39ff395b970c8c87d3fc0663c = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "orange",
+            "iconColor": "white",
+            "icon": "tags",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_a6a3cc365fa548a07c5cb47c82e8ad88 = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_a5bee649cff6ded83c49251cbc9795ae = $(`<div id="html_a5bee649cff6ded83c49251cbc9795ae" style="width: 100.0%; height: 100.0%;"><b>Pepco Grand Mall</b><br>бул. Сахаров 2 (Рядом со сп. Автогара)</div>`)[0];
+    popup_a6a3cc365fa548a07c5cb47c82e8ad88.setContent(html_a5bee649cff6ded83c49251cbc9795ae);
+
+
+
+    marker_a299dd17c58d9db31e269cfc5e48c8e1.bindPopup(popup_a6a3cc365fa548a07c5cb47c82e8ad88)
         ;
 
-        
-    
-    
-            marker_a299dd17c58d9db31e269cfc5e48c8e1.bindTooltip(
-                `<div>
+
+
+
+    marker_a299dd17c58d9db31e269cfc5e48c8e1.bindTooltip(
+        `<div>
                      Pepco Grand Mall
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_a299dd17c58d9db31e269cfc5e48c8e1.setIcon(icon_fe8906b39ff395b970c8c87d3fc0663c);
-            
-    
-            var marker_efa01b2edb9476e58ffeb87d46f4fd04 = L.marker(
-                [43.2105, 27.9052],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_29d56bff513ba7aa133f79090d607b43 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "orange",
-  "iconColor": "white",
-  "icon": "tags",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_74d4f748407fe13155864c4012b33c13 = L.popup({
-  "maxWidth": "100%",
-});
+        {
+            "sticky": true,
+        }
+    );
 
-        
-            
-                var html_b939abfbdf6462761522de90add92157 = $(`<div id="html_b939abfbdf6462761522de90add92157" style="width: 100.0%; height: 100.0%;"><b>Pepco Центр</b><br>ул. Цар Иван Страцимир 2А</div>`)[0];
-                popup_74d4f748407fe13155864c4012b33c13.setContent(html_b939abfbdf6462761522de90add92157);
-            
-        
 
-        marker_efa01b2edb9476e58ffeb87d46f4fd04.bindPopup(popup_74d4f748407fe13155864c4012b33c13)
+    marker_a299dd17c58d9db31e269cfc5e48c8e1.setIcon(icon_fe8906b39ff395b970c8c87d3fc0663c);
+
+
+    var marker_efa01b2edb9476e58ffeb87d46f4fd04 = L.marker(
+        [43.2105, 27.9052],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_29d56bff513ba7aa133f79090d607b43 = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "orange",
+            "iconColor": "white",
+            "icon": "tags",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_74d4f748407fe13155864c4012b33c13 = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_b939abfbdf6462761522de90add92157 = $(`<div id="html_b939abfbdf6462761522de90add92157" style="width: 100.0%; height: 100.0%;"><b>Pepco Центр</b><br>ул. Цар Иван Страцимир 2А</div>`)[0];
+    popup_74d4f748407fe13155864c4012b33c13.setContent(html_b939abfbdf6462761522de90add92157);
+
+
+
+    marker_efa01b2edb9476e58ffeb87d46f4fd04.bindPopup(popup_74d4f748407fe13155864c4012b33c13)
         ;
 
-        
-    
-    
-            marker_efa01b2edb9476e58ffeb87d46f4fd04.bindTooltip(
-                `<div>
+
+
+
+    marker_efa01b2edb9476e58ffeb87d46f4fd04.bindTooltip(
+        `<div>
                      Pepco Центр
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_efa01b2edb9476e58ffeb87d46f4fd04.setIcon(icon_29d56bff513ba7aa133f79090d607b43);
-            
-    
-            var marker_bddeba55e8fa14769e6ae54cc2bcaf32 = L.marker(
-                [43.2207, 27.8821],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_fdf557665ffebe50575068a195be93a6 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "orange",
-  "iconColor": "white",
-  "icon": "tags",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_f2f75b0380d9e82fac8cf096afd25472 = L.popup({
-  "maxWidth": "100%",
-});
+        {
+            "sticky": true,
+        }
+    );
 
-        
-            
-                var html_3bcee430de2fc8c68354657e841a3b78 = $(`<div id="html_3bcee430de2fc8c68354657e841a3b78" style="width: 100.0%; height: 100.0%;"><b>Pepco Младост</b><br>бул. Република 60</div>`)[0];
-                popup_f2f75b0380d9e82fac8cf096afd25472.setContent(html_3bcee430de2fc8c68354657e841a3b78);
-            
-        
 
-        marker_bddeba55e8fa14769e6ae54cc2bcaf32.bindPopup(popup_f2f75b0380d9e82fac8cf096afd25472)
+    marker_efa01b2edb9476e58ffeb87d46f4fd04.setIcon(icon_29d56bff513ba7aa133f79090d607b43);
+
+
+    var marker_bddeba55e8fa14769e6ae54cc2bcaf32 = L.marker(
+        [43.2207, 27.8821],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_fdf557665ffebe50575068a195be93a6 = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "orange",
+            "iconColor": "white",
+            "icon": "tags",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_f2f75b0380d9e82fac8cf096afd25472 = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_3bcee430de2fc8c68354657e841a3b78 = $(`<div id="html_3bcee430de2fc8c68354657e841a3b78" style="width: 100.0%; height: 100.0%;"><b>Pepco Младост</b><br>бул. Република 60</div>`)[0];
+    popup_f2f75b0380d9e82fac8cf096afd25472.setContent(html_3bcee430de2fc8c68354657e841a3b78);
+
+
+
+    marker_bddeba55e8fa14769e6ae54cc2bcaf32.bindPopup(popup_f2f75b0380d9e82fac8cf096afd25472)
         ;
 
-        
-    
-    
-            marker_bddeba55e8fa14769e6ae54cc2bcaf32.bindTooltip(
-                `<div>
+
+
+
+    marker_bddeba55e8fa14769e6ae54cc2bcaf32.bindTooltip(
+        `<div>
                      Pepco Младост
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_bddeba55e8fa14769e6ae54cc2bcaf32.setIcon(icon_fdf557665ffebe50575068a195be93a6);
-            
-    
-            var marker_24e383fadb6c1cd4756b90fb172424f3 = L.marker(
-                [43.2181, 27.8988],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_b390de38d957ab5c01d1b12ce4131f22 = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "heart",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_bbd1b2b99be798cfc2f79e06c91b48b8 = L.popup({
-  "maxWidth": "100%",
-});
+        {
+            "sticky": true,
+        }
+    );
 
-        
-            
-                var html_acb26c31b8febef1aac0a2586b4513b3 = $(`<div id="html_acb26c31b8febef1aac0a2586b4513b3" style="width: 100.0%; height: 100.0%;"><b>dm Grand Mall</b><br>ул. Сахаров 2 (Рядом со сп. Автогара)</div>`)[0];
-                popup_bbd1b2b99be798cfc2f79e06c91b48b8.setContent(html_acb26c31b8febef1aac0a2586b4513b3);
-            
-        
 
-        marker_24e383fadb6c1cd4756b90fb172424f3.bindPopup(popup_bbd1b2b99be798cfc2f79e06c91b48b8)
+    marker_bddeba55e8fa14769e6ae54cc2bcaf32.setIcon(icon_fdf557665ffebe50575068a195be93a6);
+
+
+    var marker_24e383fadb6c1cd4756b90fb172424f3 = L.marker(
+        [43.2181, 27.8988],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_b390de38d957ab5c01d1b12ce4131f22 = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "red",
+            "iconColor": "white",
+            "icon": "heart",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_bbd1b2b99be798cfc2f79e06c91b48b8 = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_acb26c31b8febef1aac0a2586b4513b3 = $(`<div id="html_acb26c31b8febef1aac0a2586b4513b3" style="width: 100.0%; height: 100.0%;"><b>dm Grand Mall</b><br>ул. Сахаров 2 (Рядом со сп. Автогара)</div>`)[0];
+    popup_bbd1b2b99be798cfc2f79e06c91b48b8.setContent(html_acb26c31b8febef1aac0a2586b4513b3);
+
+
+
+    marker_24e383fadb6c1cd4756b90fb172424f3.bindPopup(popup_bbd1b2b99be798cfc2f79e06c91b48b8)
         ;
 
-        
-    
-    
-            marker_24e383fadb6c1cd4756b90fb172424f3.bindTooltip(
-                `<div>
+
+
+
+    marker_24e383fadb6c1cd4756b90fb172424f3.bindTooltip(
+        `<div>
                      dm Grand Mall
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_24e383fadb6c1cd4756b90fb172424f3.setIcon(icon_b390de38d957ab5c01d1b12ce4131f22);
-            
-    
-            var marker_97e9b1a5299045f90b193875d95e384f = L.marker(
-                [43.2052, 27.9184],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_92f67d8562bed468aa455279179c65fe = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "heart",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_cc5684d8089df03b888e12f0faabc4fe = L.popup({
-  "maxWidth": "100%",
-});
+        {
+            "sticky": true,
+        }
+    );
 
-        
-            
-                var html_b8cd6cfb88ab6fa4558c91985e809183 = $(`<div id="html_b8cd6cfb88ab6fa4558c91985e809183" style="width: 100.0%; height: 100.0%;"><b>dm Центр</b><br>бул. Сливница 24 (Рядом со сп. Академията)</div>`)[0];
-                popup_cc5684d8089df03b888e12f0faabc4fe.setContent(html_b8cd6cfb88ab6fa4558c91985e809183);
-            
-        
 
-        marker_97e9b1a5299045f90b193875d95e384f.bindPopup(popup_cc5684d8089df03b888e12f0faabc4fe)
+    marker_24e383fadb6c1cd4756b90fb172424f3.setIcon(icon_b390de38d957ab5c01d1b12ce4131f22);
+
+
+    var marker_97e9b1a5299045f90b193875d95e384f = L.marker(
+        [43.2052, 27.9184],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_92f67d8562bed468aa455279179c65fe = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "red",
+            "iconColor": "white",
+            "icon": "heart",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_cc5684d8089df03b888e12f0faabc4fe = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_b8cd6cfb88ab6fa4558c91985e809183 = $(`<div id="html_b8cd6cfb88ab6fa4558c91985e809183" style="width: 100.0%; height: 100.0%;"><b>dm Центр</b><br>бул. Сливница 24 (Рядом со сп. Академията)</div>`)[0];
+    popup_cc5684d8089df03b888e12f0faabc4fe.setContent(html_b8cd6cfb88ab6fa4558c91985e809183);
+
+
+
+    marker_97e9b1a5299045f90b193875d95e384f.bindPopup(popup_cc5684d8089df03b888e12f0faabc4fe)
         ;
 
-        
-    
-    
-            marker_97e9b1a5299045f90b193875d95e384f.bindTooltip(
-                `<div>
+
+
+
+    marker_97e9b1a5299045f90b193875d95e384f.bindTooltip(
+        `<div>
                      dm Центр
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_97e9b1a5299045f90b193875d95e384f.setIcon(icon_92f67d8562bed468aa455279179c65fe);
-            
-    
-            var marker_cd5ca0ff46cd7d1cd4183b5828849eba = L.marker(
-                [43.2148, 27.9362],
-                {
-}
-            ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
-        
-    
-            var icon_49c6f14d6d6ef01c68034d9a49bd764d = L.AwesomeMarkers.icon(
-                {
-  "markerColor": "red",
-  "iconColor": "white",
-  "icon": "heart",
-  "prefix": "fa",
-  "extraClasses": "fa-rotate-0",
-}
-            );
-        
-    
-        var popup_7ad9db5d15693d6940ceac4bfdf378ba = L.popup({
-  "maxWidth": "100%",
-});
+        {
+            "sticky": true,
+        }
+    );
 
-        
-            
-                var html_efe4e1ec596eaa0562570a65dc544193 = $(`<div id="html_efe4e1ec596eaa0562570a65dc544193" style="width: 100.0%; height: 100.0%;"><b>dm Чайка</b><br>жк. Чайка, бл. 202</div>`)[0];
-                popup_7ad9db5d15693d6940ceac4bfdf378ba.setContent(html_efe4e1ec596eaa0562570a65dc544193);
-            
-        
 
-        marker_cd5ca0ff46cd7d1cd4183b5828849eba.bindPopup(popup_7ad9db5d15693d6940ceac4bfdf378ba)
+    marker_97e9b1a5299045f90b193875d95e384f.setIcon(icon_92f67d8562bed468aa455279179c65fe);
+
+
+    var marker_cd5ca0ff46cd7d1cd4183b5828849eba = L.marker(
+        [43.2148, 27.9362],
+        {
+        }
+    ).addTo(map_db5094cd6d47b07bb4606d4f9dade2cc);
+
+
+    var icon_49c6f14d6d6ef01c68034d9a49bd764d = L.AwesomeMarkers.icon(
+        {
+            "markerColor": "red",
+            "iconColor": "white",
+            "icon": "heart",
+            "prefix": "fa",
+            "extraClasses": "fa-rotate-0",
+        }
+    );
+
+
+    var popup_7ad9db5d15693d6940ceac4bfdf378ba = L.popup({
+        "maxWidth": "100%",
+    });
+
+
+
+    var html_efe4e1ec596eaa0562570a65dc544193 = $(`<div id="html_efe4e1ec596eaa0562570a65dc544193" style="width: 100.0%; height: 100.0%;"><b>dm Чайка</b><br>жк. Чайка, бл. 202</div>`)[0];
+    popup_7ad9db5d15693d6940ceac4bfdf378ba.setContent(html_efe4e1ec596eaa0562570a65dc544193);
+
+
+
+    marker_cd5ca0ff46cd7d1cd4183b5828849eba.bindPopup(popup_7ad9db5d15693d6940ceac4bfdf378ba)
         ;
 
-        
-    
-    
-            marker_cd5ca0ff46cd7d1cd4183b5828849eba.bindTooltip(
-                `<div>
+
+
+
+    marker_cd5ca0ff46cd7d1cd4183b5828849eba.bindTooltip(
+        `<div>
                      dm Чайка
                  </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-                marker_cd5ca0ff46cd7d1cd4183b5828849eba.setIcon(icon_49c6f14d6d6ef01c68034d9a49bd764d);
-            
+        {
+            "sticky": true,
+        }
+    );
+
+
+    marker_cd5ca0ff46cd7d1cd4183b5828849eba.setIcon(icon_49c6f14d6d6ef01c68034d9a49bd764d);
+
 </script>
+
 </html>
